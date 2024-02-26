@@ -1,3 +1,3 @@
 # holbertonschool-low_level_programming
-making the task C- Hello, world
+making the task of C - Hello, world
 
