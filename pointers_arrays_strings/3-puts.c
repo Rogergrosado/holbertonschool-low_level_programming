@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h> // Include stdio.h for the puts function
 
 /**
  * _puts - prints a string,
@@ -10,6 +9,9 @@
  */
 void _puts(char *str)
 {
-    puts(*str); // Use puts to print the string followed by a newline
-}
+while (*str)
 
+_putchar(*str++);
+_putchar('\n');
+return;
+}
