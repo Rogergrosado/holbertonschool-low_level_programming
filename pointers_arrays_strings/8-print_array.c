@@ -1,20 +1,25 @@
-#include <stdio.h>
-#include "main.h"
+#include<stdio.h>
 /**
- * print_array - prints n elements of an array of integers
- * followed by a new line
- * @a: array to be printed
- * @n: number of elements to print
+ * print_array - a function that takes a pointer to an int as parameter and
+ * updates the value it points to to 98
+ * @a: the number pointer
+ * @n : the number
+ *
+ * Return: 1 or 0
  */
+
 void print_array(int *a, int n)
 {
-int i;
-for (i = 0; i < n; i++)
-{
-if (i == 0)
-printf("%d", a[i]);
-else
-printf(", %d", a[i]);
-}
-printf("\n");
+	int i = 0;
+
+	if (n > 0)
+	{
+		while (i < n - 1)
+		{
+			printf("%d, ", a[i]);
+			i++;
+		}
+		printf("%d", a[i]);
+	}
+	printf("\n");
 }
