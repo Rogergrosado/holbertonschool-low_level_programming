@@ -1,40 +1,25 @@
-#include<stdio.h>
-
+#include "main.h"
+#include <string.h>
 /**
- * upper - a function ...
- * @c: the caractere
+ * *cap_string - Description
+ *  @c: inputted string
  *
- * Return: 1 or 0.
+ * Return: returns a converted string
  */
-
-char	upper(char c)
+char *cap_string(char *c)
 {
-	char	car;
+	int i = 0;
 
-	if (c >= 'a' && c <= 'z')
-		car = c + 'A' - 'a';
-	else
-		car = c;
-	return (car);
-}
-
-/**
- * cap_string - a function ...
- * @str: the chaine of caractere
- *
- * Return: str
- */
-
-char	*cap_string(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (c[i] != '\0')
 	{
-		str[i] = upper(str[i]);
+		if (c[i] > 96 && c[i] < 123 && (c[i - 1] == ' ' ||
+						c[i - 1] == '\n' || c[i - 1] == '\t' || c[i - 1] == ','
+						|| c[i - 1] == ';' || c[i - 1] == '.' || c[i - 1] == '!'
+						|| c[i - 1] == '?' || c[i - 1] == '"' || c[i - 1] == '(' ||
+						c[i - 1] == ')' || c[i - 1] == '{' || c[i - 1] == '}' || i == 0))
+			c[i] = c[i] - 32;
 		i++;
 	}
-	return (str);
-}
 
+	return (c);
+}
